@@ -1,0 +1,57 @@
+HTML stands for Hyper Text Markup Language. It describes the structure of a Web page. We use JavaScript for performing the action and CSS for adding style to the web page. 
+ 
+HTML is used to create any content like a form on a page. HTML is similar to markdown in some ways.  
+HTML contains elements that define the structure of a page.  
+ 
+A simple HTML page contains: 
+● head: where all the scripts and stylesheets for the page are added; and 
+ 
+ ● body: where all the content of the page is added. 
+ 
+ 
+The body of an HTML page can contain several different types of elements: 
+● heading; 
+● input: to collect input from the user; and 
+● button: to display a button. 
+We can have h1-h6 to display headings of different sizes. 
+When an HTML document is loaded into a web browser, it becomes a document object. 
+An HTML document's tree structure represents a part of the document wherein each node is an ​object​. This model of an HTML page is called Document Object Model (or DOM). We will be using the p5 Dom library to create the form. 
+ 
+ Every game has a registration. Let’s create a form where different users can log in their name and get into the game. 
+ 
+Now, we can have as many players as we want. 
+We can keep an account of the number of players in the game. 
+ 
+For example, when the game state is 0 (WAIT), we want the players to see the login form to register their names as players.  
+ 
+Let's say we make a 4-player game. When the number of registered players reaches 4, we want the game state to become 1 (PLAY). When the game state changes to 1, we would like the game to start. 
+ There are a number of ways in which we can go about doing this. But before doing that, we need to think about decomposition. 
+ The state of the game can be 0, 1, 2, i.e. gameState 0(WAIT) or the game when the gameState is 1(PLAY) or leaderboard when the gameState is 2(END). 
+ 
+For now, we will only consider the case when the game state is 0. 
+
+Our Game object should be able to read the gameState and update the gameState. It should also be able to start itself and display the game on the screen depending on the gameState. 
+ 
+A constructor of a class is used to give properties to an object when it is created. For now, we can keep the constructor empty. 
+ 
+Let's write functions inside the Game Class to getState and update the state. getState()​ will simply read the game state from the database and update(state)​ will update the gameState​ in the database to a value passed to it inside the parentheses. 
+databaseReference.on()​ creates a listener that keeps listening to the gameState​ from the database.
+When the ​gameState​ is changed in the database, the function is passed as an argument to it.  
+ 
+ databaseReference.update()​ will update the database reference.  Here “/” refers to the main database inside which ​gameState​ is created. 
+ We can also create a ​start()​ function that will start the game and display on the screen depending on the game's state. 
+ 
+For now, when the gameState is 0, we want a form and a player object to be created. We want to display the form and get the playerCount. 
+ 
+We will write code to create these objects even though the blueprint isn't defined yet. This is called writing code using ​abstraction​.  
+ We will be writing code for these classes and creating these objects after this. 
+ 
+ We can use title element.To do that we need the following process: 
+ ● First, we need to create an element. 
+ ● Second, change the HTML content inside the element using HTML tag. 
+ ● Third, position the title on the canvas. 
+ 
+ 
+ button.mousePressed()​ can be used to trigger an action when a mouse button is pressed. It expects a function as an argument. 
+ 
+ 
